@@ -1,0 +1,58 @@
+<style type="text/css">
+  #menuEEG, #menuECG, #menuCancer, #menuBlood1, #menuBlood2{
+    font-size: 1.5em;
+    padding: 5px;
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+  }
+  #menuEEG{
+    top: {{eegtop}}px;
+    left: {{eegLeft}}px;
+  }
+  #menuECG{
+    top: {{ecgtop}}px;
+    left: {{ecgLeft}}px; 
+  }
+  #menuCancer{
+    top: {{cantop}}px;
+    left: {{canLeft}}px;
+  }
+  #menuBlood1{
+    left: {{bldLeft}}px;
+    top: {{bldtop}}px;
+  }
+  #menuBlood2{
+    left: {{bldLeft2}}px;
+    top: {{bldtop}}px;
+  }
+</style>
+
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12" ng-mousemove="captureCoordinate($event)">
+      <img id="avatarImg" src="./assets/img/avatar.jpg" style="width: 100%;"/>
+      <div style="height: 50px;"></div>
+    </div>
+      <div style="position: absolute; top: 0;">
+
+        <div ng-if="isBrain" id="menuEEG">
+          <div><a href="#/panels">EEG</a></div>
+        </div>
+        <div ng-if="isHeart" id="menuECG">
+          <div><a href="#/charts">ECG</a></div>
+        </div>
+        <div ng-if="isLung" id="menuCancer">
+          <div><a href="#/tac">Cancer</a></div>
+        </div>
+        <div ng-if="isBlood1" id="menuBlood1">
+          <div><a href="#/bloodtest">Blood</a></div>
+        </div>
+        <div ng-if="isBlood2" id="menuBlood2">
+          <div><a href="#/bloodtest">Blood</a></div>
+        </div>
+      </div>
+  </div>
+
+</div>
